@@ -1,0 +1,67 @@
+<div class="flex min-h-screen">
+    <div
+        class="col-12 lg:col-8 p-6 flex align-items-center justify-content-center"
+    >
+        <div class="w-full" style="max-width: 500px">
+            <h2 class="text-primary font-bold mb-4">Enter OTP Code</h2>
+            <form [formGroup]="otpForm" (ngSubmit)="onSubmit()">
+                <div class="field mb-4 w-full">
+                    <label for="otp" class="block text-600 font-medium"
+                        >OTP Code</label
+                    >
+                    <input
+                        id="otp"
+                        type="number"
+                        pInputText
+                        formControlName="otp"
+                        placeholder="Enter the OTP sent to your email"
+                        class="w-full"
+                        [ngClass]="{
+                            'ng-dirty ng-invalid':
+                                (otpForm.get('otp')?.touched ||
+                                    otpForm.get('otp')?.dirty) &&
+                                !otpForm.get('otp')?.valid
+                        }"
+                    />
+                    <app-error-field-helper
+                        [formControlKey]="otpForm.get('otp')"
+                    ></app-error-field-helper>
+                </div>
+                <button
+                    type="submit"
+                    pButton
+                    label="Confirm"
+                    class="w-full p-button-primary"
+                    [disabled]="otpForm.invalid"
+                ></button>
+                <app-countdown></app-countdown>
+                <p class="text-center mt-3">
+                    Didn't receive the code?
+                    <a (click)="resendOtp()" class="text-primary cursor-pointer"
+                        >Resend OTP</a
+                    >
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div
+        class="col-12 lg:col-4 hidden lg:flex flex-column align-items-center justify-content-center bg-primary text-white"
+        style="height: 100vh"
+    >
+        <div class="text-center p-4">
+            <p-image
+                src="../assets/images/register.png"
+                alt="Image"
+                width="350"
+            />
+            <h2 class="mb-3 font-bold">Verify Your Account</h2>
+            <p>
+                Enter the code sent to your email to activate your account.
+                Didn't receive a code? Click resend to get a new one.
+            </p>
+        </div>
+    </div>
+</div>
+<flash-message-error></flash-message-error>
+<flash-message-success></flash-message-success>

@@ -1,0 +1,33 @@
+<div
+    class="flex flex-column bg-surface-100 h-full min-h-screen bg-white shadow-2 p-4 pt-5 sidebar mt-4"
+>
+    <ul class="list-none p-0">
+        <li *ngFor="let item of menuItems" class="mb-2 item">
+            <a
+                [routerLink]="item.link"
+                routerLinkActive="navlink-active"
+                [ngClass]="{ 'navlink-active': isParentActive(item.link) }"
+                style="gap: 10px"
+                class="flex items-center px-3 py-3 no-underline text-primary transition-colors"
+            >
+                <i [class]="item.icon"></i>
+                <span>{{ item.label }}</span>
+            </a>
+        </li>
+    </ul>
+    <!-- <div class="text-center flex align-items-center mb-4 gap-2">
+        <span class="text-xl text-primary bg-white user-avatar"
+            ><i class="fa fa-user"></i
+        ></span>
+
+        <p class="text-primary">{{ username }}</p>
+    </div> -->
+    <a
+        (click)="logout()"
+        style="gap: 10px"
+        class="flex items-center px-3 py-3 no-underline text-primary transition-colors"
+    >
+        <i class="fa fa-power-off"></i>
+        <span>Logout</span>
+    </a>
+</div>

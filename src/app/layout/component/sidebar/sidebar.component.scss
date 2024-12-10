@@ -1,0 +1,30 @@
+a {
+    border-radius: 4px;
+}
+a:hover {
+    background-color: #d6ffcf;
+    color: #355f2e !important;
+}
+
+.navlink-active {
+    background-color: #d6ffcf;
+    color: #355f2e !important;
+}
+
+.navlink-active i {
+    color: #a8cd89; /* Warna saat aktif */
+}
+
+a i {
+    color: #355f2e; /* Warna default */
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

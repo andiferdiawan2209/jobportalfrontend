@@ -1,0 +1,32 @@
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.p-button-primary {
+    background: var(--primary-color);
+    border: none;
+}
+
+.p-button-primary:hover {
+    background: #a8cd89;
+}
+
+.p-button-light {
+    color: white;
+    border: 1px solid white;
+}
+
+.p-button-light:hover {
+    color: #a8cd89;
+    background: white;
+}
+
+@media screen and (max-width: 992px) {
+    .hidden {
+        display: none !important;
+    }
+}

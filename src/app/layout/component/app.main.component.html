@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<div class="grid">
+    <div class="lg:col-3 md:hidden lg:block in-w-max sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="lg:col-9 sm:col-12 p-4 mt-7">
+        <router-outlet *ngIf="!config?.loading"></router-outlet>
+    </div>
+</div>
+<flash-message-success></flash-message-success>
+<flash-message-error></flash-message-error>

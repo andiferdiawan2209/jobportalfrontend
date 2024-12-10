@@ -1,0 +1,10 @@
+.content {
+    padding-top: 100px;
+}
+
+/* Sembunyikan elemen .col-3 pada layar dengan lebar maksimal 768px */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
